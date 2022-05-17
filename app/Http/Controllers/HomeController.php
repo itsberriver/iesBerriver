@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students = Student::orderBy('id','desc')->paginate(10);
+        $students = Student::orderBy('id','desc')->simplePaginate(5);
         return view ('home', compact('students'));
     }
 }

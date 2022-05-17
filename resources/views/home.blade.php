@@ -3,7 +3,7 @@
 @section('content')
     @foreach($students as $student)
 
-        <p> {{$students->studentName}}</p>
+        <p> {{$student->studentName}}</p>
 
     @endforeach
 @endsection
