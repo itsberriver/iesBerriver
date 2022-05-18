@@ -3,8 +3,11 @@
 @section('content')
     @foreach($students as $student)
 
-        <p> {{$student->studentName}}</p>
-
+        <p class="text-center"> {{$student->studentName}}</p>
+        <p class="bg-red"> {{$student->studentEmail}}</p>
+        
     @endforeach
+
+
     {{$students->links()}}
 @endsection
