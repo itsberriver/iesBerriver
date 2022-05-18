@@ -6,4 +6,5 @@
         <p> {{$student->studentName}}</p>
 
     @endforeach
+    {{$students->links()}}
 @endsection
