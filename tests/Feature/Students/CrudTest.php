@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 // use App\Models\Students;
+use Tests\Feature\user;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -13,11 +14,13 @@ class CrudTest extends TestCase
      *
      * @return void
      */
+
+    /*<-----------READ---------->*/
 use RefreshDatabase;
-    public function test_student_list_appear_in_home()
+    public function test_route_in_home()
     {
         $this ->withExceptionHandling();
-        Student::all();
+
         $response = $this->get('/');
         $response->assertStatus(200)
             ->assertViewIs('home');
