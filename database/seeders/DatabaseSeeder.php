@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
     {
         
         Student::factory(10)->create();
+        User::factory()->create(['name'=>'jess','email'=>'jess@gmail.com']);
     }
 }
