@@ -44,11 +44,25 @@ use RefreshDatabase;
      /*<-----------UPDATE---------->*/
     /* @test */
     
-    public function test_()
+    public function test_a_student_can_be_updated()
     {
         $this ->withExceptionHandling();
 
-        
+        $student = Student::factory()->create();
+        $this->assertCount(1, Student::all());
+        $this->patch(route('update', $student->id),['studentName' => 'New Name']);
+        $this->assertEquals(Student::first()->studentName, 'New Name');
+        $this->assertCount(1, Student::all());
+    }
+
+    public function test_you_can_see_edit_view()
+    {
+        $this ->withExceptionHandling();
+        Student::factory()->create();
+        $response = $this->get('/edit/1');
+        $response->assertStatus(200)
+            ->assertViewIs('edit');
+
     }
     
 }
