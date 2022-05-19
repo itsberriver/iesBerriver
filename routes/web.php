@@ -22,5 +22,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 /*CRUD*/
-Route::delete('delete/{student}',[StudentController::class,'destroy'])->name('delete');
+Route::delete('/delete/{id}',[StudentController::class,'destroy'])->name('delete');
  

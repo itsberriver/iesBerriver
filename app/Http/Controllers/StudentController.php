@@ -78,10 +78,11 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student )
+    public function destroy($id)
     {
-        Student::destroy($student->id);
-        return redirect()->route('home');
+        $student = Student::find($id); //busca que exista el id
+        Student::destroy($student->id); //coge el idd
+        return redirect()->route('home'); //redirecciona a home
         //
     }
 }
