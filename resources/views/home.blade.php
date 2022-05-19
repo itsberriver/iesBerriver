@@ -8,7 +8,7 @@
         <form action="{{ route('delete', $student->id) }}" method="post">
             @method ('delete')
             @csrf
-            <button type="submit" class="rounded-full bg-yellow">Delete</button>
+            <button type="submit" onclick="return confirm('Are you sure you want to delete{{$student->studentName}}?')">Delete</button>
         </form>
         @endforeach
 
