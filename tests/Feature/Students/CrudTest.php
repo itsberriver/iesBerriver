@@ -40,5 +40,15 @@ use RefreshDatabase;
         $response = $this->delete(route('delete', $student->id));
         $this->assertCount(0, Student::all());
     }
+
+     /*<-----------UPDATE---------->*/
+    /* @test */
+    
+    public function test_()
+    {
+        $this ->withExceptionHandling();
+
+        
+    }
     
 }

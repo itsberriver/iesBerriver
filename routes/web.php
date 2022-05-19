@@ -23,4 +23,7 @@ Auth::routes();
 
 /*CRUD*/
 Route::delete('/delete/{id}',[StudentController::class,'destroy'])->name('delete');
+Route::get('/edit/{id}',[StudentController::class,'edit'])->name('edit');
+Route::patch('/update/{id}',[StudentController::class,'update'])->name('update');
+
  
