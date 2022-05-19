@@ -5,8 +5,12 @@
 
         <p class="text-center"> {{$student->studentName}}</p>
         <p class="bg-red"> {{$student->studentEmail}}</p>
-        
-    @endforeach
+        <form action="{{route('delete', ['id'=>$student->id])}}" method="post">
+            @method ('delete')
+            @csrf
+            <button type="submit" class="rounded-full bg-yellow">Delete</button>
+        </form>
+        @endforeach
 
 
     {{$students->links()}}

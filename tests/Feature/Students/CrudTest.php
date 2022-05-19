@@ -1,11 +1,12 @@
 <?php
 
 namespace Tests\Feature;
-// use App\Models\Students;
+
 use Tests\Feature\user;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Student;
 
 class CrudTest extends TestCase
 {
@@ -16,6 +17,7 @@ class CrudTest extends TestCase
      */
 
     /*<-----------READ---------->*/
+    /* @test */
 use RefreshDatabase;
     public function test_route_in_home()
     {
@@ -25,4 +27,18 @@ use RefreshDatabase;
         $response->assertStatus(200)
             ->assertViewIs('home');
     }
+
+    /*<-----------DELETE---------->*/
+    /* @test */
+    
+    public function test_a_product_can_be_deleted()
+    {
+        $this ->withExceptionHandling();
+
+        $student = Student::factory()->create();
+        $this->assertCount(1, Student::all());
+        $response = $this->delete(route('delete', $student->id));
+        $this->assertCount(0, Student::all());
+    }
+    
 }

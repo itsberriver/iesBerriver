@@ -80,6 +80,8 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
+        Student::destroy($student->id);
+        return redirect()->route('home');
         //
     }
 }

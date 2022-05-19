@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +20,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
+
+/*CRUD*/
+Route::delete('delete/{student}',[StudentController::class,'destroy'])->name('delete');
