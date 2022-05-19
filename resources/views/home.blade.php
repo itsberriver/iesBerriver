@@ -5,7 +5,7 @@
 
         <p class="text-center"> {{$student->studentName}}</p>
         <p class="bg-red"> {{$student->studentEmail}}</p>
-        <form action="{{route('delete', ['id'=>$student->id])}}" method="post">
+        <form action="{{ route('delete', $student->id) }}" method="post">
             @method ('delete')
             @csrf
             <button type="submit" class="rounded-full bg-yellow">Delete</button>

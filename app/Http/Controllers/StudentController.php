@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Student;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -78,7 +78,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Student $student )
     {
         Student::destroy($student->id);
         return redirect()->route('home');
