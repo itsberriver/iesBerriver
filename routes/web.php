@@ -23,3 +23,4 @@ Auth::routes();
 
 /*CRUD*/
 Route::delete('delete/{student}',[StudentController::class,'destroy'])->name('delete');
+ 

@@ -31,7 +31,7 @@ use RefreshDatabase;
     /*<-----------DELETE---------->*/
     /* @test */
     
-    public function test_a_product_can_be_deleted()
+    public function test_a_student_can_be_deleted()
     {
         $this ->withExceptionHandling();
 
