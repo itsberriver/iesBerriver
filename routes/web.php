@@ -21,10 +21,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-/*CRUD*/
+/*CRUD STUDENTS*/
 Route::delete('/delete/{id}',[StudentController::class,'destroy'])->name('delete');
 Route::get('/edit/{id}',[StudentController::class,'edit'])->name('edit');
 Route::patch('/update/{id}',[StudentController::class,'update'])->name('update');
-Route::post('students',[StudentController::class,'store'])->name('store');
-Route::get('create',[StudentController::class,'create'])->name('create');
- 
+Route::post('/students',[StudentController::class,'store'])->name('store');
+Route::get('/create',[StudentController::class,'create'])->name('create');
+
+/*STUDENT*/
+Route::get('/show/{id}',[StudentController::class,'show'])->name('show');

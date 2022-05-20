@@ -82,6 +82,14 @@ use RefreshDatabase;
             ->assertViewIs('create');
     }
 
-
+    /*<-----------SHOW---------->*/
+    public function test_show_view_is_seen()
+    {
+        $this ->withExceptionHandling();
+        $student = Student::factory()->create();
+        $response = $this ->get(route ('show', $student->id));
+        $response->assertStatus(200)
+            ->assertSee($student->title);
+    }
 
 }
