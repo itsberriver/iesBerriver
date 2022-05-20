@@ -24,7 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -35,7 +35,9 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newStudent = request()->except('_token');
+        Student::create($newStudent);
+        return redirect('/');
     }
 
     /**
@@ -83,9 +85,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $student = Student::find($id); //busca que exista el id
-        Student::destroy($student->id); //coge el idd
-        return redirect()->route('home'); //redirecciona a home
+        $student = Student::find($id); 
+        Student::destroy($student->id); 
+        return redirect()->route('home'); 
         //
     }
 }

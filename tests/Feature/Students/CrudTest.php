@@ -64,5 +64,24 @@ use RefreshDatabase;
             ->assertViewIs('edit');
 
     }
-    
+
+    /*<-----------CREATE---------->*/
+    public function test_you_can_create_a_student()
+    {
+        $this ->withExceptionHandling();
+        $this->assertCount(0, Student::all());
+        Student::factory()->create();
+        $this->assertCount(1, Student::all());
+    }
+
+    public function test_you_can_see_create_view()
+    {
+        $this ->withExceptionHandling();
+        $response = $this->get('/create');
+        $response->assertStatus(200)
+            ->assertViewIs('create');
+    }
+
+
+
 }

@@ -8,9 +8,9 @@
         <form action="{{ route('delete', $student->id) }}" method="post">
             @method ('delete')
             @csrf
-            <button type="submit" onclick="return confirm('Are you sure you want to delete{{$student->studentName}}?')">Delete</button>
+            <button type="submit" onclick="return confirm('Are you sure you want to delete {{$student->studentName}}?')">Delete</button>
         </form>
-        <form
+        <form>
         <form action="{{ route('update', $student->id) }}" method="post">
         @method ('patch')
         @csrf
