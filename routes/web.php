@@ -29,4 +29,4 @@ Route::post('/students',[StudentController::class,'store'])->name('store');
 Route::get('/create',[StudentController::class,'create'])->name('create');
 
 /*STUDENT*/
-Route::get('/show/{id}',[StudentController::class,'show'])->name('show');
+Route::get('/show/{student}',[StudentController::class,'show'])->name('show');
