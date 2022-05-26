@@ -30,3 +30,9 @@ Route::get('/create',[StudentController::class,'create'])->name('create');
 
 /*STUDENT*/
 Route::get('/show/{student}',[StudentController::class,'show'])->name('show');
+
+
+
+
+Route::get('/subscribe/{id}',[StudentController::class,'subscribe'])->name('subscribe');
+Route::get('/unsubscribe/{id}',[StudentController::class,'unsubscribe'])->name('unsubscribe');
