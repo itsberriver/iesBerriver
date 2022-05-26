@@ -15,11 +15,9 @@ class Student extends Model
         'grades',
         'averege',
         'date_and_time',
-        'semester',
         'class',
-        'schoolYear',
         'makeUpTest',
         'attendence',
-        'subject',
+        
     ];
 }

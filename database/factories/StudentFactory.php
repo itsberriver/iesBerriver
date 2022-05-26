@@ -23,12 +23,10 @@ class StudentFactory extends Factory
             'grades' => $this->faker->numberBetween(1, 10),
             'averege' => $this->faker->numberBetween(1, 10),
             'date_and_time' => $this->faker->dateTime,
-            'semester' => $this->faker->name,
             'class' => $this->faker->name,
-            'schoolYear' => $this->faker->numberBetween(1, 10),
             'makeUpTest' => $this->faker->boolean,
             'attendence' => $this->faker->boolean,
-            'subject' => $this->faker->name,
+            
         ];
     }
 }

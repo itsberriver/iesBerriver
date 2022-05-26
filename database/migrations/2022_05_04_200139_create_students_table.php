@@ -20,12 +20,9 @@ return new class extends Migration
             $table->integer('grades');
             $table->integer('averege');
             $table->dateTime('date_and_time')->nullable();
-            $table->string('semester',50);
             $table->string('class',50);
-            $table->integer('schoolYear');
             $table->boolean('makeUpTest')->default(false);
             $table->boolean('attendence')->default(false);
-            $table->string('subject',50);
             $table->timestamps();
             
         });
