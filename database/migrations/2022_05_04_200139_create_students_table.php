@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('class',50);
             $table->boolean('makeUpTest')->default(false);
             $table->boolean('attendence')->default(false);
+            $table->boolean('isAdmin')->default(false);//añadido nuevo
             $table->timestamps();
-            
         });
     }
 

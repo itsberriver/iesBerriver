@@ -26,6 +26,7 @@ class StudentFactory extends Factory
             'class' => $this->faker->name,
             'makeUpTest' => $this->faker->boolean,
             'attendence' => $this->faker->boolean,
+            'isAdmin'=> false,  //añadido nuevo
             
         ];
     }

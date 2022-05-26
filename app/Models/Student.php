@@ -18,6 +18,7 @@ class Student extends Model
         'class',
         'makeUpTest',
         'attendence',
+        'isAdmin',
         
     ];
 }
