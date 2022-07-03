@@ -19,7 +19,14 @@
         </a>
     </form>
         @endforeach
-
+        <form>
+        <form action="{{ route('create', $student->id) }}" method="post">
+        @method ('patch')
+        @csrf
+        <a href="{{ route('create') }}">
+            <button type="button">Create</button>
+        </a>
+    </form>
 
     {{$students->links()}}
 @endsection

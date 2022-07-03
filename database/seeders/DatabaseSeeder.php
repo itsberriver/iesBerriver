@@ -28,5 +28,8 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['name'=>'jess','email'=>'jess@gmail.com']);
         Subject::factory(4)->create();
         Teacher::factory(10)->create();
+
+        Teacher::factory(3)->has(Student::factory()->count(3))->create();
+        Student::factory(3)->has(Subject::factory()->count(3))->create();
     }
 }

@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('teacher_student', function (Blueprint $table) {
             $table->id();
+
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
+
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
+            
             $table->timestamps();
         });
     }
